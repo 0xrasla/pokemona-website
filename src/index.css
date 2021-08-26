@@ -1,13 +1,109 @@
+@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap');
 body {
-  margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+  background: #6441A5;  /* fallback for old browsers */
+  background: -webkit-linear-gradient(to right, #2a0845, #6441A5);  /* Chrome 10-25, Safari 5.1-6 */
+  background: linear-gradient(to right, #2a0845, #6441A5); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+  font-family: 'Bebas Neue', cursive;
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+.main {
+  text-align: center;  
+color: white;
 }
+
+a {
+  color: white;
+  text-decoration: none;
+}
+
+.container {
+  display: flex;
+  width: 90%;
+  margin: auto;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+}
+
+.poke {
+  background-color: blueviolet;
+  padding: 10px;
+  margin: 10px;
+  box-shadow: 3px 3px 8px black;
+
+}
+
+.poke p {
+  color: rgb(240, 237, 233);
+
+}
+
+.poke:hover {
+  transform:scale(1.08);
+}
+
+/* // info // */
+.info-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  color: white;
+  text-align: center;
+  border: 3px solid rgb(44, 42, 42);
+  width: 60%;
+  margin: 0 auto;
+  box-shadow: 3px 3px 8px black;
+}
+
+.main__ {
+  margin: 3%;
+}
+
+.info-container a{
+  color: white;
+  text-decoration: none;
+  background-color: #ad1341;
+  padding: 10px;
+  border-radius: 10px;
+  margin: 20px;
+}
+
+.info-container a:hover {
+  opacity: 0.9;
+}
+
+.info-container p {
+  line-height: 1.3em;
+  padding: 0;
+  margin: 4px;
+}
+
+.info-container button {
+  background-color: #ad1341;
+  color: white;
+  padding: 10px;
+  border: none;
+  border-radius: 10px;
+  cursor: pointer;
+  margin: 10px;
+}
+
+.info-container button:hover {
+  opacity: 0.9;
+}
+
+/* // FAV // */
+ .btn {
+  background-color: #ad1341;
+  color: white;
+  padding: 10px;
+  border: none;
+  border-radius: 10px;
+  cursor: pointer;
+  margin: 10px;
+ }
+
+ .btn:hover {
+   opacity: 0.9;
+ }
