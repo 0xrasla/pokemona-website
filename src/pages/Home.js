@@ -20,12 +20,10 @@ function Home({ onClick }) {
         setError("Error!");
       })
       .then((data) => {
-        console.log(data);
         setData(data.results);
         setLoading(false);
       });
     return () => {
-      console.log("abort");
       controller.abort();
     };
   }, []);

@@ -9,28 +9,36 @@ function Info({ url }) {
   const [cliked, setcliked] = useState(false);
 
   useEffect(() => {
-    fetch(url)
+    const controller = new AbortController();
+    const signal = controller.signal;
+
+    fetch(url, { signal })
       .then((res) => res.json())
       .then((data) => {
         setData(data);
         setloading(false);
       });
+    return () => {
+      controller.abort();
+    };
   }, [url]);
 
-  const fetchData = () => {
+  useEffect(() => {
+    const controller = new AbortController();
+    const signal = controller.signal;
+
     const ok = data && data.species.url;
     if (ok) {
-      return fetch(data.species.url, { method: "GET" })
+      fetch(data.species.url, { method: "GET", signal: signal })
         .then((res) => res.json())
         .then((data) => {
           setextraData(data);
           setloading(false);
         });
+      return () => {
+        controller.abort();
+      };
     }
-  };
-
-  useEffect(() => {
-    fetchData();
   });
 
   function saveToLocalStorage(name, url, speciesurl) {
